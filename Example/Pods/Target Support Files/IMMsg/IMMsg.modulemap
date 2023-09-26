@@ -1,0 +1,6 @@
+framework module IMMsg {
+  umbrella header "IMMsg-umbrella.h"
+
+  export *
+  module * { export * }
+}

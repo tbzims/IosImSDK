@@ -1,0 +1,22 @@
+{
+  "name": "IMMsg",
+  "version": "0.1.0",
+  "summary": "A short description of IMMsg.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/tbzims@outlook.com/IMMsg",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "tbzims@outlook.com": "tbzims@outlook.com"
+  },
+  "source": {
+    "git": "https://github.com/tbzims@outlook.com/IMMsg.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "IMMsg/Classes/**/*"
+}
