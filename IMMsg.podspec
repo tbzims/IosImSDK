@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IMMsg'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = 'A short description of IMMsg.'
 
 # This description is used to generate tags and improve search results.
@@ -18,17 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/tbzims@outlook.com/IMMsg'
+  s.homepage         = 'https://github.com/tbzims/IosImSDK'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'tbzims@outlook.com' => 'tbzims@outlook.com' }
-  s.source           = { :git => 'https://github.com/tbzims@outlook.com/IMMsg.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/tbzims/IosImSDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'IMMsg/Classes/**/*'
   
