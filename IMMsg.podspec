@@ -29,8 +29,15 @@ Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.0'
+  s.requires_arc = true
+  s.swift_version = '5.0'
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+  s.static_framework = true
+  s.vendored_frameworks = ['IMMsg/IMSDK.framework', 'IMMsg/CommonModule.framework']
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-  s.source_files = 'IMMsg/Classes/**/*'
+  s.source_files = 'IMMsg/Classes/Resources/*'
   
   # s.resource_bundles = {
   #   'IMMsg' => ['IMMsg/Assets/*.png']
@@ -39,4 +46,28 @@ Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  s.dependency "BuzzWCDB", '1.1.1'
+  s.dependency "Alamofire", '~> 4.9.1'
+  s.dependency "HandyJSON", '~> 5.0.2'
+  s.dependency "RxSwiftExt", '~> 6.2.1'
+  s.dependency "MMKV", '~> 1.2.10'
+  s.dependency "SnapKit", '~> 4.2.0'
+  s.dependency "AliyunOSSiOS", '~> 2.10.15'
+  s.dependency "AWSS3", '~> 2.25.0'
+  s.dependency "Masonry", '~> 1.1.0'
+  s.dependency "CocoaLumberjack/Swift", '~> 3.7.2'
+  s.dependency "Localize-Swift", '~> 3.2.0'
+  s.dependency "RxGesture", '~> 4.0.2'
+  s.dependency "Texture", '~> 3.0.0'
+  s.dependency "NSObject+Rx", '~> 5.2.2'
+  s.dependency "R.swift", '= 6.1.0'
+  s.dependency "MJRefresh", '~> 3.7.5'
+  s.dependency "QMUIKit", '~> 4.5.1'
+  s.dependency "HYText", '~> 0.1.0'
+  s.dependency "YYModel", '~> 1.0.4'
+  s.dependency "SDWebImage", '~> 5.11.1'
+  s.dependency "JXPagingView", '= 2.1.2'
+  s.dependency "lottie-ios", '= 4.0.1'
+
 end
