@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IMMsg'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'A short description of IMMsg.'
 
 # This description is used to generate tags and improve search results.
@@ -37,7 +37,7 @@ Add long description of the pod here.
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-  s.source_files = 'IMMsg/Classes/Resources/*'
+  s.resources = 'IMMsg/Classes/Resources/*'
   
   # s.resource_bundles = {
   #   'IMMsg' => ['IMMsg/Assets/*.png']
