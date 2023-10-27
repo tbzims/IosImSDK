@@ -1179,6 +1179,7 @@ SWIFT_CLASS("_TtC5IMSDK16IMChatViewColors")
 @property (nonatomic, copy) NSString * _Nonnull listDeleteButtonText;
 @property (nonatomic, copy) NSString * _Nonnull listMuteButtonBg;
 @property (nonatomic, copy) NSString * _Nonnull listMuteButtonText;
+@property (nonatomic, copy) NSString * _Nonnull listSearchResultHighlightedText;
 @property (nonatomic, copy) NSString * _Nonnull listinitializationButtonText;
 @property (nonatomic, copy) NSString * _Nonnull listinitializationButtonFrame;
 @property (nonatomic, copy) NSString * _Nonnull listinitializationText;
@@ -2608,7 +2609,6 @@ SWIFT_CLASS("_TtC5IMSDK5IMSdk")
 - (void)setConversationInfoWithInfos:(NSArray<IMConversationinfo *> * _Nonnull)infos;
 - (void)setGoogleMapKeyWithMapKey:(NSString * _Nonnull)mapKey;
 - (void)logOutWithSuccess:(void (^ _Nonnull)(void))success failed:(void (^ _Nonnull)(void))failed;
-- (void)clearTokenTest;
 /// create group chat
 - (void)createChatWithAChatId:(NSString * _Nonnull)aChatId chatName:(NSString * _Nonnull)chatName aUids:(NSArray<NSString *> * _Nonnull)aUids success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSString * _Nonnull))fail;
 /// This method must be accessed at the main thread

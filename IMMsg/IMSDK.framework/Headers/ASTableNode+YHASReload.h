@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * ASTableNode刷新闪烁的解决办法
+ * ASTableNode Refresh blinking solutions
  */
 @interface ASTableNode (YHASReload)
 

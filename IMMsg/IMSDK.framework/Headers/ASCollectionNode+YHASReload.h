@@ -2,7 +2,6 @@
 //  ASCollectionNode+YHASReload.h
 //  FrameDating
 //
-//  Created by 银河 on 2019/6/1.
 //  Copyright © 2019_All rights reserved.
 //
 
@@ -11,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * ASCollectionNode刷新闪烁的解决办法
+ * ASCollectionNode Refresh blinking solutions
  */
 @interface ASCollectionNode (YHASReload)
 

@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IMHYBrowserContainerCell : UICollectionViewCell
 
-@property (nonatomic, strong) UIImage *placeholderImage;//占位图
+@property (nonatomic, strong) UIImage *placeholderImage;
 @property (nonatomic, strong) UIScrollView *scrollView;
 //@property (nonatomic, strong) IMCallHeadImageView *browserImageView;
 @property (nonatomic, strong) IMBrowserVo *cellModel;
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) IMAnimatedImageView *thumImageView;
 
-//用户单击0，用户双击1，用户下滑上滑退出2
+//click = 0，double click = 1，scroll quite = 2
 @property (nonatomic, copy) void(^whenTapOneActionClick)(IMHYBrowserContainerCell *cell);
 @property (nonatomic, copy) void(^whenTapTwoActionClick)(IMHYBrowserContainerCell *cell);
 @property (nonatomic, copy) void(^whenNeedHideAction)(IMHYBrowserContainerCell *cell);

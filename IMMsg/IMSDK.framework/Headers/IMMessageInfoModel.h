@@ -69,15 +69,7 @@ typedef NS_ENUM(NSUInteger, IMMessageContentType) {
     IMMessageContentType_HistoryPosiation,
 };
 
-/**
- 会话类型
 
- - Single_Type: 单聊
- - Group_Type: 群组
- - Chatroom_Type: 聊天室
- - Channel_Type: 频道
- - Things_Type: 物联网
- */
 typedef NS_ENUM(NSInteger, IMMConversationType) {
     Single_Type,
     Group_Type,
@@ -87,16 +79,6 @@ typedef NS_ENUM(NSInteger, IMMConversationType) {
 };
 
 
-/**
- 消息状态
-
- - Message_Status_Sending: 发送中
- - Message_Status_Sent: 发送成功
- - Message_Status_Send_Failure: 发送失败
- - Message_Status_Unread: 未读
- - Message_Status_Readed: 已读
- - Message_Status_Played: 已播放(媒体消息)
- */
 typedef NS_ENUM(NSInteger, IMessageStatus) {
     Message_Status_Sending,
     Message_Status_Sent,

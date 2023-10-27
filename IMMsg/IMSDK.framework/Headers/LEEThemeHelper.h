@@ -1,17 +1,17 @@
 /*
  *  @header LEEThemeHelper.h
  *
- *  ┌─┐      ┌───────┐ ┌───────┐ 帅™
+ *  ┌─┐      ┌───────┐ ┌───────┐ ™
  *  │ │      │ ┌─────┘ │ ┌─────┘
  *  │ │      │ └─────┐ │ └─────┐
  *  │ │      │ ┌─────┘ │ ┌─────┘
  *  │ └─────┐│ └─────┐ │ └─────┐
  *  └───────┘└───────┘ └───────┘
  *
- *  @brief  LEE主题管理
+ *  @brief  LEE
  *
  *  @author LEE
- *  @copyright    Copyright © 2016 - 2019年 lee. All rights reserved.
+ *  @copyright    Copyright © 2016 - 2019 lee. All rights reserved.
  *  @version    V1.1.10
  */
 
@@ -23,7 +23,7 @@ FOUNDATION_EXPORT const unsigned char LEEThemeVersionString[];
 
 @class LEEThemeConfigModel;
 
-#pragma mark - 宏
+#pragma mark - 
 
 #define LEEColorRGBA(R , G , B , A) [UIColor colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:A]
 

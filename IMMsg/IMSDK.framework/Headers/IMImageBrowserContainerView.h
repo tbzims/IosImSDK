@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) IMOSS *oss;
 
-@property (nonatomic, strong) UIImage *placeholderImage;//占位图
+@property (nonatomic, strong) UIImage *placeholderImage;
 @property (nonatomic, strong) NSArray <IMBrowserVo *> *browserVos;
 @property (nonatomic, strong) id dataSource;
-@property (nonatomic, assign) NSInteger currentIndex;//当前下标，下标不能大于image.count
+@property (nonatomic, assign) NSInteger currentIndex;//current index, index <= image.count
 @property (nonatomic, strong) NSArray *toViews;
 @property (nonatomic, strong) UIView *toView;
 @property (nonatomic, strong) UIView *backgroundView;

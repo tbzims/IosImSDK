@@ -2,7 +2,6 @@
 //  IMSDK.h
 //  IMSDK
 //
-//  Created by 蒋小丫 on 2022/11/20.
 //
 
 #import <Foundation/Foundation.h>

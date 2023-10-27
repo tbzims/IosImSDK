@@ -20,9 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) changeStatu:(AVPlayer *)player playerItem:(AVPlayerItem *)playerItem;
 
-/*进度条定时器*/
+/*Progress bar timer*/
 @property (nonatomic, strong) IMCLGCDTimer       *sliderTimer;
-/*点击定时器*/
+/*Click timer*/
 @property (nonatomic, strong) IMCLGCDTimer       *tapTimer;
 @property (nonatomic,strong) IMCLSlider *slider;
 

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ASControlNode (YHAddTap)
 
-// ASControlNode点击事件封装
+// ASControlNode 
 - (void)yh_addControllActionWithBlock:(void(^_Nullable)( __kindof ASControlNode * sender))actionBlock;
 
 @end

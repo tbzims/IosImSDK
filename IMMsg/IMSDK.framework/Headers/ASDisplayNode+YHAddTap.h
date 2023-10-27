@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ASDisplayNode (YHAddTap)
 
-// ASDisplayNode触摸事件
+// ASDisplayNode
 - (void)yh_addTapWithActionBlock:(void(^_Nullable)(void))actionBlock;
 
 @end

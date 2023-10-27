@@ -348,18 +348,18 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary *)TextSplit:(NSString *)text;
 
 
-/**  获取缩列图  **/
+/**    **/
 + (void)getThumbnailImageFromPHAsset:(PHAsset *)asset
                      completionBlock:(void(^)(NSData *result, NSDictionary *info))completionBlock;
 
 + (NSString *)changeVideoTime:(long)time;
 
-//判断输入的浮点数属于标准格式x.xx
+//x.xx
 + (BOOL)inputMoneyNumber;
 
 + (NSArray *)defaultEmoticons;
 
-//是不是话题
+//
 + (NSArray *)isTopic:(NSString *)str;
 
 //+ (void)addLocalNotice:(NSString *)title Body:(NSString *)body;

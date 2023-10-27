@@ -2,8 +2,6 @@
 //  UIView+HYFrame.h
 //  chanDemo
 //
-//  Created by 银河 on 2018/11/8.
-//  Copyright © 2018 银河. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
