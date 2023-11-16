@@ -1504,6 +1504,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong, getter=default, setter
 - (void)preGetConversationLastSawIndexWithGroupId:(NSString * _Nonnull)groupId context:(IMContext * _Nonnull)context imsdk:(IMSdk * _Nonnull)imsdk completed:(void (^ _Nullable)(NSInteger, NSInteger, BOOL))completed;
 - (void)getConversationLastSawIndexWithGroupId:(NSString * _Nonnull)groupId context:(IMContext * _Nonnull)context imsdk:(IMSdk * _Nonnull)imsdk completed:(void (^ _Nullable)(NSInteger, NSInteger, BOOL))completed;
 - (void)updateSingleChatTopWithChatId:(NSString * _Nonnull)chatId isTop:(NSInteger)isTop currentTopTime:(NSInteger)currentTopTime context:(IMContext * _Nonnull)context complete:(void (^ _Nullable)(NSError * _Nullable, NSInteger))complete;
++ (void)setChatIsReadAsyncWithChatId:(NSString * _Nonnull)chatId aChatId:(NSString * _Nonnull)aChatId context:(IMContext * _Nonnull)context;
 + (void)setChatIsReadWithChatId:(NSString * _Nonnull)chatId aChatId:(NSString * _Nonnull)aChatId context:(IMContext * _Nonnull)context;
 - (void)deleteChatWithChatId:(NSString * _Nonnull)chatId aChatId:(NSString * _Nonnull)aChatId context:(IMContext * _Nonnull)context oss:(IMOSS * _Nonnull)oss block:(void (^ _Nullable)(BOOL))block;
 + (void)getUserEventChangeConversionInfoWithInfos:(NSArray<IMConversationInfo *> * _Nonnull)infos eventIds:(NSArray<NSString *> * _Nonnull)eventIds oss:(IMOSS * _Nonnull)oss complete:(void (^ _Nullable)(NSDictionary<NSString *, IMConversationInfo *> * _Nonnull))complete;
@@ -2421,6 +2422,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=defau
 + (void)getAtStatusWithChatsAsyncWithChatIds:(NSArray<NSString *> * _Nonnull)chatIds context:(IMContext * _Nonnull)context doneBlock:(void (^ _Nonnull)(NSDictionary<NSString *, NSNumber *> * _Nonnull))doneBlock;
 + (void)deleteMessageForMeWithAMids:(NSArray<NSString *> * _Nonnull)aMids context:(IMContext * _Nonnull)context oss:(IMOSS * _Nonnull)oss success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSString * _Nonnull))fail;
 + (void)deleteMessageForEveryOneWithAMids:(NSArray<NSString *> * _Nonnull)aMids context:(IMContext * _Nonnull)context oss:(IMOSS * _Nonnull)oss success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSString * _Nonnull))fail;
++ (void)setChatIsReadAsyncWithChatId:(NSString * _Nonnull)chatId context:(IMContext * _Nonnull)context completionHandler:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull))completionHandler;
 @end
 
 typedef SWIFT_ENUM(NSInteger, IMMessageMenuType, closed) {
