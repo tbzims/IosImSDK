@@ -305,6 +305,35 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+SWIFT_CLASS("_TtC12CommonModule19IMAESAfStreamClient")
+@interface IMAESAfStreamClient : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class NSString;
+
+SWIFT_CLASS("_TtC12CommonModule9IMAESUtil")
+@interface IMAESUtil : NSObject
+/// Decrypt the data returned by the server (if it fails, return nil, otherwise it may be a json string, or it may be just a string, depending on the specific business analysis)
+/// \param originDecryptString Encrypted string
+///
+- (NSString * _Nullable)im_aes_128_decryptWith:(NSString * _Nullable)originDecryptString key:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+/// Encrypt the data before transmitting it to the server
+/// \param encryptObject can be one of string, array, dictionary
+///
+- (NSString * _Nullable)im_aes_128_encryptWith:(id _Nullable)encryptObject key:(NSString * _Nonnull)key iv:(NSString * _Nonnull)iv SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12CommonModule24IMAESXPShortStreamClient")
+@interface IMAESXPShortStreamClient : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC12CommonModule16IMAfStreamClient")
 @interface IMAfStreamClient : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -316,7 +345,6 @@ SWIFT_CLASS("_TtC12CommonModule7IMAsync")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSString;
 @class IMMomentMessageImageContent;
 
 SWIFT_CLASS("_TtC12CommonModule13IMAvatarModel")
@@ -653,6 +681,12 @@ SWIFT_CLASS("_TtC12CommonModule21IMXPShortStreamClient")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+
+SWIFT_CLASS("_TtC12CommonModule12NetAESConfig")
+@interface NetAESConfig : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 @protocol OssDownLoadViewStatus;
 

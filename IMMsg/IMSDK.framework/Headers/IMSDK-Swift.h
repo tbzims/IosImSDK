@@ -1152,6 +1152,11 @@ SWIFT_CLASS("_TtC5IMSDK16IMChatViewColors")
 @property (nonatomic, copy) NSString * _Nonnull chatButtonEndBg;
 @property (nonatomic, copy) NSString * _Nonnull chatFileDownloadProgressBg;
 @property (nonatomic, copy) NSString * _Nonnull chatFileDownloadingBg;
+@property (nonatomic, copy) NSString * _Nonnull chatMessageTranslatBg;
+@property (nonatomic, copy) NSString * _Nonnull chatMessageTranslateText;
+@property (nonatomic, copy) NSString * _Nonnull chatMessageTranslateFailText;
+@property (nonatomic, copy) NSString * _Nonnull chatMessageTranslateDivider;
+@property (nonatomic, copy) NSString * _Nonnull chatMessageTranslateLabelText;
 @property (nonatomic, copy) NSString * _Nonnull chatListBg;
 @property (nonatomic, copy) NSString * _Nonnull chatListDataBg;
 @property (nonatomic, copy) NSString * _Nonnull chatListHoverBg;
