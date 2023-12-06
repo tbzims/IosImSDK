@@ -531,6 +531,7 @@ SWIFT_CLASS("_TtC5IMSDK14IMCardBaseCell")
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (void)layoutSubviews;
 @end
 
 
@@ -1093,6 +1094,8 @@ SWIFT_CLASS("_TtC5IMSDK16IMChatViewColors")
 @property (nonatomic, copy) NSString * _Nonnull chatDetailVerticalCardLine;
 @property (nonatomic, copy) NSString * _Nonnull chatDetailVerticalCardTime;
 @property (nonatomic, copy) NSString * _Nonnull chatDetailHorizontalCardBg;
+@property (nonatomic, copy) NSString * _Nonnull chatDetailHorizontalCardStartBg;
+@property (nonatomic, copy) NSString * _Nonnull chatDetailHorizontalCardEndBg;
 @property (nonatomic, copy) NSString * _Nonnull chatDetailHorizontalCardFrame;
 @property (nonatomic, copy) NSString * _Nonnull chatDetailHorizontalCardText;
 @property (nonatomic, copy) NSString * _Nonnull chatDetailHorizontalCardLine;
