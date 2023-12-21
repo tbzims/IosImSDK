@@ -1495,6 +1495,7 @@ SWIFT_CLASS("_TtC5IMSDK21IMConversationManager")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong, getter=default, setter=setDefault:) IMConversationManager * _Nonnull default_;)
 + (IMConversationManager * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
 + (void)setDefault:(IMConversationManager * _Nonnull)value;
++ (void)getConversionListAsyncWithChatIds:(NSArray<NSString *> * _Nonnull)chatIds context:(IMContext * _Nonnull)context completionHandler:(void (^ _Nonnull)(NSArray<IMConversationInfo *> * _Nullable, NSError * _Nullable))completionHandler;
 + (void)getConversationAsyncWithChatIds:(NSArray<NSString *> * _Nonnull)chatIds context:(IMContext * _Nonnull)context memberDelegate:(id <IMGroupMemberDelegate> _Nullable)memberDelegate complete:(void (^ _Nullable)(NSArray<IMConversationInfo *> * _Nonnull))complete SWIFT_AVAILABILITY(ios,introduced=13.0.0);
 + (void)getConversationAsyncWithChatIds:(NSArray<NSString *> * _Nonnull)chatIds context:(IMContext * _Nonnull)context memberDelegate:(id <IMGroupMemberDelegate> _Nullable)memberDelegate completionHandler:(void (^ _Nonnull)(NSArray<IMConversationInfo *> * _Nonnull))completionHandler SWIFT_AVAILABILITY(ios,introduced=13.0.0);
 + (void)getOCEventConversationWithChatIds:(NSArray<NSString *> * _Nonnull)chatIds context:(IMContext * _Nonnull)context memberDelegate:(id <IMGroupMemberDelegate> _Nullable)memberDelegate complete:(void (^ _Nullable)(NSArray<IMConversationInfo *> * _Nonnull))complete;
@@ -1623,6 +1624,7 @@ SWIFT_CLASS("_TtC5IMSDK23IMConversationViewModel")
 - (NSArray<IMConversationInfo *> * _Nonnull)getSortListWithList:(NSArray<IMConversationInfo *> * _Nonnull)list SWIFT_WARN_UNUSED_RESULT;
 - (void)setDelegateWithDelegate:(id <ConversationViewModelDelegate> _Nonnull)delegate;
 - (void)getChatIsMuteWithAChatId:(NSString * _Nonnull)aChatId complete:(void (^ _Nullable)(NSInteger))complete;
+- (void)getChatIsMuteAsyncWithAChatId:(NSString * _Nonnull)aChatId completionHandler:(void (^ _Nonnull)(NSInteger))completionHandler;
 - (void)setConversationWithAChatId:(NSString * _Nonnull)aChatId isMute:(BOOL)isMute success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSString * _Nonnull))fail;
 - (void)deleteWithSuccess:(void (^ _Nullable)(void))success;
 - (void)getUnReadCountWithSuccess:(void (^ _Nullable)(NSInteger))success;
@@ -1687,6 +1689,16 @@ SWIFT_CLASS("_TtC5IMSDK23IMConversionSelectorAll")
 
 SWIFT_CLASS("_TtC5IMSDK24IMConversionSelectorAll1")
 @interface IMConversionSelectorAll1 : NSObject <IMConversionSelector>
+- (void)selectorWithContext:(IMContext * _Nonnull)context type:(enum IMConversionSelectorType)type complete:(void (^ _Nullable)(NSArray<NSString *> * _Nonnull))complete;
+- (BOOL)isAll SWIFT_WARN_UNUSED_RESULT;
+- (id <IMConversionSelector> _Nonnull)orWithSelector:(id <IMConversionSelector> _Nonnull)selector SWIFT_WARN_UNUSED_RESULT;
+- (id <IMConversionSelector> _Nonnull)andWithSelector:(id <IMConversionSelector> _Nonnull)selector SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5IMSDK24IMConversionSelectorRead")
+@interface IMConversionSelectorRead : NSObject <IMConversionSelector>
 - (void)selectorWithContext:(IMContext * _Nonnull)context type:(enum IMConversionSelectorType)type complete:(void (^ _Nullable)(NSArray<NSString *> * _Nonnull))complete;
 - (BOOL)isAll SWIFT_WARN_UNUSED_RESULT;
 - (id <IMConversionSelector> _Nonnull)orWithSelector:(id <IMConversionSelector> _Nonnull)selector SWIFT_WARN_UNUSED_RESULT;
@@ -1761,11 +1773,11 @@ SWIFT_CLASS("_TtC5IMSDK23IMDeleteConversionAlert")
 @end
 
 
+
+
 @interface IMDeleteConversionAlert (SWIFT_EXTENSION(IMSDK))
 - (ASLayoutSpec * _Nonnull)layoutSpecThatFits:(ASSizeRange)constrainedSize SWIFT_WARN_UNUSED_RESULT;
 @end
-
-
 
 
 typedef SWIFT_ENUM(NSInteger, IMDownloadStatus, closed) {
@@ -2124,11 +2136,11 @@ SWIFT_CLASS("_TtC5IMSDK17IMLeaveGroupAlert")
 @end
 
 
-
-
 @interface IMLeaveGroupAlert (SWIFT_EXTENSION(IMSDK))
 - (ASLayoutSpec * _Nonnull)layoutSpecThatFits:(ASSizeRange)constrainedSize SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 
@@ -2649,6 +2661,10 @@ SWIFT_CLASS("_TtC5IMSDK5IMSdk")
 - (void)saveDraftMessageWithAChatId:(NSString * _Nonnull)aChatId aMid:(NSString * _Nonnull)aMid draft:(IMDraftMessages * _Nonnull)draft;
 - (void)deleteDraftMessageWithAChatId:(NSString * _Nonnull)aChatId;
 - (void)deleteDraftQuotoMessageWithAChatId:(NSString * _Nonnull)aChatId;
+- (void)getDraftMessageAsyncWithAChatId:(NSString * _Nonnull)aChatId completionHandler:(void (^ _Nonnull)(IMDraftMessages * _Nullable))completionHandler;
+- (void)saveDraftMessageAsyncWithAChatId:(NSString * _Nonnull)aChatId aMid:(NSString * _Nonnull)aMid draft:(IMDraftMessages * _Nonnull)draft completionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)deleteDraftMessageAsyncWithAChatId:(NSString * _Nonnull)aChatId completionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)deleteDraftQuotoMessageAsyncWithAChatId:(NSString * _Nonnull)aChatId completionHandler:(void (^ _Nonnull)(void))completionHandler;
 @end
 
 @class IMSearchMessageResult;
@@ -2815,12 +2831,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (NSString * _Nullable)localizedWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-@interface IMSwiftOcBridge (SWIFT_EXTENSION(IMSDK))
-+ (NSString * _Nonnull)randomString:(NSInteger)count SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nonnull)generateIv SWIFT_WARN_UNUSED_RESULT;
-@end
-
 @class UITextView;
 @class UITextField;
 
@@ -2841,6 +2851,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// -Parameter decimalNumberCount: Number of decimal places
 /// -Parameter maxNumber: maximum value
 - (BOOL)validateNumberInputWithTextField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)shouldChangeCharactersInRange replacementString:(NSString * _Nonnull)replacementString decimalNumberCount:(NSInteger)decimalNumberCount maxNumber:(NSString * _Nonnull)maxNumber SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface IMSwiftOcBridge (SWIFT_EXTENSION(IMSDK))
++ (NSString * _Nonnull)randomString:(NSInteger)count SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)generateIv SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
