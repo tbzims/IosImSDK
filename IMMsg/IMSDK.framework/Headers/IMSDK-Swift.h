@@ -1318,6 +1318,7 @@ SWIFT_CLASS("_TtC5IMSDK16IMChatViewColors")
 @property (nonatomic, copy) NSString * _Nonnull chatMediaListEmptyJsonName;
 @property (nonatomic, copy) NSString * _Nonnull chatFileListEmptyJsonName;
 @property (nonatomic, copy) NSString * _Nonnull chatVoiceListEmptyJsonName;
+@property (nonatomic) BOOL chatListScrollbarShow;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
